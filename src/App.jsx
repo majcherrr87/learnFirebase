@@ -1,19 +1,19 @@
-import { Container } from "react-bootstrap";
-import { Signup } from "./components/Signup";
-import { AuthProvider } from "./contexts/AuthContext";
+import { TodoList } from "./components/TodoList";
+import { NavBar } from "./components/NavBar";
+import { Sidebar } from "./components/Sidebar";
 
 function App() {
+  console.log("Render App");
+
   return (
-    <AuthProvider>
-      <Container
-        className="d-flex align-items-center justify-content-center"
-        style={{ minHeight: "100vh" }}
-      >
-        <div className="w-100" style={{ maxWidth: "400px" }}>
-          <Signup />
-        </div>
-      </Container>
-    </AuthProvider>
+    <div className="wrapper">
+      <NavBar>
+        <main>
+          <TodoList />
+        </main>
+        <Sidebar />
+      </NavBar>
+    </div>
   );
 }
 
